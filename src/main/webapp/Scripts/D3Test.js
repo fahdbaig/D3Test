@@ -5,7 +5,12 @@ function D3Draw()
       .data(dataset)
       .enter()
       .append("p")        
-      .text("Multiple text lines");
+      .text(textWrite(dd));
 }
 
 window.onload=D3Draw;
+
+function textWrite(dd)
+{
+    return "This is text for line number " + dd;
+}
