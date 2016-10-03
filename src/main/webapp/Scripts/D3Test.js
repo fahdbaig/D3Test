@@ -5,12 +5,12 @@ function D3Draw()
       .data(dataset)
       .enter()
       .append("p")        
-      .text(textWrite);
+      .text(function (dd)
+          {
+            return "This is text for line number " + dd;
+          }
+        );
 }
 
 window.onload=D3Draw;
 
-function textWrite(dd)
-{
-    return "This is text for line number " + dd;
-}
