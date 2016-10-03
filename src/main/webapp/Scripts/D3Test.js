@@ -5,7 +5,7 @@ function D3Draw()
       .data(dataset)
       .enter()
       .append("p")        
-      .text(textWrite(dd));
+      .text(textWrite);
 }
 
 window.onload=D3Draw;
