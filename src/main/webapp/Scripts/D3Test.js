@@ -16,7 +16,7 @@
 
 function JsonDraw()
 {
-    var path="http://ac32007.cloudapp.net:8080/Circles/Towns/20";
+    var path="http://ac32007.cloudapp.net:8080/Circles/Towns/200";
     
     d3.json(path,function (error,d)
     {
