@@ -26,9 +26,9 @@ function JsonDraw()
         }
         //console.log(data);
         
-        d3.select("body").selectAll("p").data(d).enter().append("p").text(function(dd)
+        d3.select("body").selectAll("p").data(d).enter().append("p").text(function(dd,index)
         {
-          return "Town: " + dd.Town;  
+          return "Town " + index + ": " + dd.Town;  
         });
     })
 }
