@@ -13,7 +13,7 @@
 }
 */
 
-
+/*
 function JsonDraw()
 {
     var path="http://ac32007.cloudapp.net:8080/Circles/Towns/200";
@@ -28,9 +28,36 @@ function JsonDraw()
         
         d3.select("body").selectAll("p").data(d).enter().append("p").text(function(dd,index)
         {
-          return "Town " + index + ": " + dd.Town;  
+          return "Town " + (index+1) + ": " + dd.Town;  
         });
     })
 }
-window.onload=JsonDraw;
+*/
+
+function MapDraw()
+{
+    var width = 960;
+    var height = 1160;
+
+    var svg = d3.select("body").append("svg")
+            .attr("width",width)
+            .attr("height",height);
+    
+    d3.json("uk.json",function(error,uk)
+    {
+        if(error)
+        {
+            console.log(uk);
+        }
+        else
+        {
+            svg.append("path")
+               //.datum(topojson.feature(uk, uk.objects.subunits))
+               .datum(uk)
+               //.attr("d", d3.geo.path().projection(d3.geo.mercator()));
+               .attr("d", d3.geo.path().projection(d3.geo.mercator()));
+        }
+    });
+}
+window.onload=MapDraw;
 
