@@ -18,19 +18,19 @@ function JsonDraw()
 {
     var path="http://ac32007.cloudapp.net:8080/Circles/Towns/20";
     
-    d3.json(path,function (error,data)
+    d3.json(path,function (error,d)
     {
         if(error)
         {
             console.log(error);
         }
         //console.log(data);
+        
+        d3.select("body").selectAll("p").data(d).enter().append("p").text(function(d)
+        {
+          return "Town: " + d.Town;  
+        });
     })
-    
-    d3.select("body").select("p").enter().append("p").text(function(data)
-    {
-      return data.Town;  
-    });
 }
 window.onload=JsonDraw;
 
