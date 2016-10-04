@@ -22,9 +22,9 @@ function JsonDraw()
     {
         if(error)
         {
-            Console.log(error);
+            console.log(error);
         }
-        
+        console.log(data);
         d3.select("body").select("p").append("p").text(data[0]);
     })
 }
