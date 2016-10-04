@@ -25,11 +25,12 @@ function JsonDraw()
             console.log(error);
         }
         //console.log(data);
-        d3.select("body").select("p").enter().append("p").text(function(data)
-        {
-          return data.Town;  
-        });
     })
+    
+    d3.select("body").select("p").enter().append("p").text(function(data)
+    {
+      return data.Town;  
+    });
 }
 window.onload=JsonDraw;
 
