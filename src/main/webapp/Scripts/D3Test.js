@@ -1,4 +1,4 @@
-function D3Draw()
+/*function D3Draw()
 {
     var dataset = [5,6,2,8,9];
     d3.select("body").selectAll("p")      
@@ -11,6 +11,22 @@ function D3Draw()
           }
         );
 }
+*/
 
-window.onload=D3Draw;
+
+function JsonDraw()
+{
+    var path="http://ac32007.cloudapp.net:8080/Circles/Towns/20";
+    
+    d3.json(path,function (error,data)
+    {
+        if(error)
+        {
+            Console.log(error);
+        }
+        
+        d3.select("body").select("p").append("p").text(data[0]);
+    })
+}
+window.onload=JsonDraw;
 
