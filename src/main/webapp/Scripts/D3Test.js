@@ -25,7 +25,10 @@ function JsonDraw()
             console.log(error);
         }
         console.log(data);
-        d3.select("body").select("p").append("p").text(data[0]);
+        d3.select("body").select("p").enter().append("p").text(function(d)
+        {
+          return d.Town;  
+        });
     })
 }
 window.onload=JsonDraw;
