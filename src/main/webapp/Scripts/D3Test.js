@@ -24,10 +24,10 @@ function JsonDraw()
         {
             console.log(error);
         }
-        console.log(data);
-        d3.select("body").select("p").enter().append("p").text(function(d)
+        //console.log(data);
+        d3.select("body").select("p").enter().append("p").text(function(data)
         {
-          return d.Town;  
+          return data.Town;  
         });
     })
 }
