@@ -43,7 +43,8 @@ function MapDraw()
             .attr("width",width)
             .attr("height",height);
     
-    d3.json("/Data/uk.json",function(error,uk)
+    
+    d3.json("Data/uk.json",function(error,uk)
     {
         if(error)
         {
