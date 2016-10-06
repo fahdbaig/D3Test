@@ -52,9 +52,11 @@ function MapDraw()
         }
         else
         {
-            svg.append("path")
+            svg.data(uk)
+                .enter()
+                .append("path")
                //.datum(topojson.feature(uk, uk.objects.subunits))
-               .datum(uk)
+//               .datum(uk)
                //.attr("d", d3.geo.path().projection(d3.geo.mercator()));
                .attr("d", d3.geo.path().projection(d3.geo.mercator()));
         }
