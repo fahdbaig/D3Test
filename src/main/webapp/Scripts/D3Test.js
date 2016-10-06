@@ -59,8 +59,8 @@ function MapDraw()
                .append("path")
                //.datum(topojson.feature(uk, uk.objects.subunits))
 //               .datum(uk)
-               //.attr("d", d3.geo.path().projection(d3.geo.mercator()));
-               .attr("d", path);
+               .attr("d", d3.geo.path().projection(d3.geo.mercator()));
+               //.attr("d", path);
         }
     });
 }
