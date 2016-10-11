@@ -36,8 +36,8 @@ function JsonDraw()
 
 function MapDraw()
 {
-    var width = 500;
-    var height = 300;
+    var width = 960;
+    var height = 1160;
 
     var svg = d3.select("body").append("svg")
             .attr("width",width)
