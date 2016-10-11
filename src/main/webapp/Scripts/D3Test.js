@@ -36,15 +36,14 @@ function JsonDraw()
 
 function MapDraw()
 {
-    var width = 960;
-    var height = 1160;
+    var width = 500;
+    var height = 300;
 
+    var path = d3.geo.path();
     var svg = d3.select("body").append("svg")
             .attr("width",width)
             .attr("height",height);
-       
-    var path = d3.geo.path();
-    
+        
     d3.json("Data/uk.json",function(error,uk)
     {
         if(error)
