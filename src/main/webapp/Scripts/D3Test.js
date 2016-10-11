@@ -59,7 +59,7 @@ function MapDraw()
                .append("path")
                //.datum(topojson.feature(uk, uk.objects.subunits))
 //               .datum(uk)
-               .attr("d", path.projection(d3.geo.mercator().scale(150).center(d3.geo.centroid(uk)).translate([width/2,height/2])));
+               .attr("d", path.projection(d3.geo.mercatorProjection().scale(150).center(d3.geo.centroid(uk)).translate([width/2,height/2])));
                //.attr("d", path);
         }
     });
