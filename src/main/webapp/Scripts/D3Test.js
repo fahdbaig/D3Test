@@ -53,7 +53,7 @@ function MapDraw()
         else
         {          
             svg.selectAll("path")
-               
+               .data(uk)
                .enter()
                .append("path")
                //.datum(topojson.feature(uk, uk.objects.subunits))
