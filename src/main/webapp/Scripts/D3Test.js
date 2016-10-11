@@ -43,6 +43,7 @@ function MapDraw()
             .attr("width",width)
             .attr("height",height);
        
+    
     d3.json("Data/uk.json",function(error,uk)
     {
         if(error)
@@ -50,9 +51,9 @@ function MapDraw()
             console.log(uk);
         }
         else
-        {
+        {          
             svg.selectAll("path")
-               .data(uk.features)
+               
                .enter()
                .append("path")
                //.datum(topojson.feature(uk, uk.objects.subunits))
