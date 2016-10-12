@@ -57,10 +57,9 @@ function MapDraw()
             {
                 console.log(tdata); 
                 townsData = tdata;
-                console.log(townsData); 
             }
         }
-    )   
+    );   
     
     
     d3.select("body").selectAll("p").data(townsData).enter().append("p").text(function(dd,index)
