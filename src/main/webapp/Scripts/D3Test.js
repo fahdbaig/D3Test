@@ -42,7 +42,24 @@ function MapDraw()
     var svg = d3.select("body").append("svg")
             .attr("width",width)
             .attr("height",height);
-           
+    
+    var townsPath = "http://ac32007.cloudapp.net:8080/Circles/Towns/2";
+    
+    var townsData = d3.json(townsPath, 
+        function(error)
+        {
+            if(error)
+            {
+                console.log("ERROR: Unable to connect to towns' server.");
+            }
+        }
+    )
+    
+    d3.select("body").selectAll("p").data(townsData).enter().append("p").text(function(dd,index)
+    {
+      return "Town " + (index+1) + ": " + dd.Town;  
+    });
+    
     d3.json("Data/uk.json",function(error,uk)
     {
         if(error)
