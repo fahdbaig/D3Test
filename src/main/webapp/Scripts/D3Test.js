@@ -51,7 +51,7 @@ function MapDraw()
         }
         else
         {
-            var projection = d3.geo.mercator()
+            var projection = d3.geoMercator()
                                .scale(1500).
                                center(d3.geoCentroid(uk)).
                                translate([width/2,height/2]);
