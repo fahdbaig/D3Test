@@ -51,17 +51,17 @@ function MapDraw()
         }
         else
         {
-            var projection = d3.geoMercator()
+            var projection = d3.geo.mercator()
                                .scale(1500).
                                center(d3.geoCentroid(uk)).
                                translate([width/2,height/2]);
-            var path = d3.geoPath()
+            var path = d3.geo.path()
                          .projection(projection);
             
             svg.selectAll("path")
                .data(uk.features)
                .enter()
-//               .append("path")
+               .append("path")
                .attr("d", path);
         }
     });
