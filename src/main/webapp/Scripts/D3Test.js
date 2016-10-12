@@ -61,8 +61,8 @@ function MapDraw()
         }
     );   
     
-    
-    d3.select("body").selectAll("p").data(townsData.data).enter().append("p").text(function(dd,index)
+    console.log(townsData);
+    d3.select("body").selectAll("p").data(townsData).enter().append("p").text(function(dd,index)
     {
       return "Town " + (index+1) + ": " + dd.Town;  
     });
