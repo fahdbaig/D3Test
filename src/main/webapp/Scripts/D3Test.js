@@ -42,9 +42,7 @@ function MapDraw()
     var svg = d3.select("body").append("svg")
             .attr("width",width)
             .attr("height",height);
-    
-    var path = d3.geoPath();
-        
+           
     d3.json("Data/uk.json",function(error,uk)
     {
         if(error)
@@ -52,15 +50,19 @@ function MapDraw()
             console.log(uk);
         }
         else
-        {          
+        {
+            var projection = d3.geoMercator()
+                               .scale(1500).
+                               center(d3.geoCentroid(uk)).
+                               translate([width/2,height/2]);
+            var path = d3.geoPath()
+                         .projection(projection);
+            
             svg.selectAll("path")
                .data(uk.features)
                .enter()
-               .append("path")
-               //.datum(topojson.feature(uk, uk.objects.subunits))
-//               .datum(uk)
-               .attr("d", path.projection(d3.geoMercator().scale(1500).center(d3.geoCentroid(uk)).translate([width/2,height/2])));
-               //.attr("d", path);
+//               .append("path")
+               .attr("d", path);
         }
     });
 }
