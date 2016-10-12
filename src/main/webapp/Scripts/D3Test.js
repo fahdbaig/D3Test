@@ -36,9 +36,9 @@ function JsonDraw()
 
 function MapDraw()
 {
-    var width = 960;
-    var height = 1160;
-
+    var height = 800;
+    var width = 600;
+    
     var svg = d3.select("body").append("svg")
             .attr("width",width)
             .attr("height",height);
@@ -59,7 +59,7 @@ function MapDraw()
                .append("path")
                //.datum(topojson.feature(uk, uk.objects.subunits))
 //               .datum(uk)
-               .attr("d", path.projection(d3.geoMercator().scale(8500).center(d3.geoCentroid(uk)).translate([width/2,height/2])));
+               .attr("d", path.projection(d3.geoMercator().scale(150).center(d3.geoCentroid(uk)).translate([width/2,height/2])));
                //.attr("d", path);
         }
     });
