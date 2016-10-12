@@ -55,6 +55,7 @@ function MapDraw()
             }
             else
             {
+                console.log(tdata); 
                 townsData = tdata;
             }
         }
