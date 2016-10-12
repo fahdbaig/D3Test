@@ -54,11 +54,11 @@ function MapDraw()
         else
         {          
             svg.selectAll("path")
-               //.enter()
+               .data(uk.features)
+               .enter()
                .append("path")
-               .datum(uk)
-    //.datum(topojson.feature(uk, uk.objects.subunits))
-    //               .datum(uk)
+               //.datum(topojson.feature(uk, uk.objects.subunits))
+//               .datum(uk)
                .attr("d", path.projection(d3.geoMercator().scale(1500).center(d3.geoCentroid(uk)).translate([width/2,height/2])));
                //.attr("d", path);
         }
