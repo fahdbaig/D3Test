@@ -45,7 +45,8 @@ function MapDraw()
     
     var townsPath = "http://ac32007.cloudapp.net:8080/Circles/Towns/2";
     
-    var townsData = d3.json(townsPath, 
+    var townsData;
+    d3.json(townsPath, 
         function(error, tdata)
         {
             if(error)
@@ -54,14 +55,16 @@ function MapDraw()
             }
             else
             {
-                d3.select("body").selectAll("p").data(tdata).enter().append("p").text(function(dd,index)
-                {
-                  return "Town " + (index+1) + ": " + dd.Town;  
-                });
+                townsData = tdata;
             }
         }
     )   
     
+    
+    d3.select("body").selectAll("p").data(townsData).enter().append("p").text(function(dd,index)
+    {
+      return "Town " + (index+1) + ": " + dd.Town;  
+    });
     
     d3.json("Data/uk.json",function(error,uk)
     {
