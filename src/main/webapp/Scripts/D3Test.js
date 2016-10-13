@@ -47,7 +47,7 @@ function MapDraw()
     
     var townsData;
     d3.json(townsPath, 
-        function(error, tdata)
+        function(error, townsData)
         {
             if(error)
             {
@@ -55,8 +55,8 @@ function MapDraw()
             }
             else
             {
-                townsData = tdata;
-                console.log(tdata);
+                //townsData = tdata;
+                //console.log(tdata);
                 console.log(townsData);
             }
         }
