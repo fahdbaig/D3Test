@@ -45,9 +45,9 @@ function MapDraw()
     
     var townsPath = "http://ac32007.cloudapp.net:8080/Circles/Towns/2";
     
-    var townsData ={};
+    var townsData = {};
     d3.json(townsPath, 
-        function(error, townsData)
+        townsData = function(error, tData)
         {
             if(error)
             {
@@ -55,9 +55,8 @@ function MapDraw()
             }
             else
             {
-                //townsData = tdata;
-                //console.log(tdata);
-                console.log(townsData);
+                console.log(tData);
+                return tData;
             }
         }
     );   
