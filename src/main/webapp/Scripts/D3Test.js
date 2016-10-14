@@ -53,7 +53,7 @@ function LoadTownsData(numberOfTowns)
             else
             {
                 console.log(tData);
-                svg = MapDraw(tData)
+                svg = MapDraw(tData);
             }
         }
     );  
