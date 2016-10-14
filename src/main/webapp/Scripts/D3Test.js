@@ -41,6 +41,7 @@ function UKMapRenderer(numberOfTowns)
 function LoadTownsData(numberOfTowns)
 {    
     var townsPath = "http://ac32007.cloudapp.net:8080/Circles/Towns/" + numberOfTowns;
+    var svg = {};
     d3.json(townsPath, 
         function(error, tData)
         {
@@ -51,7 +52,7 @@ function LoadTownsData(numberOfTowns)
             else
             {
                 console.log(tData);
-                MapDraw(tData)
+                svg = MapDraw(tData)
             }
         }
     );  
@@ -101,6 +102,8 @@ function MapDraw(townsData)
                .attr("d", path);
         }
     });
+    
+    return svg;
 }
 window.onload=UKMapRenderer;
 
