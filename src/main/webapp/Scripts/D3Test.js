@@ -33,18 +33,9 @@ function JsonDraw()
     })
 }
 */
-
-function MapDraw()
+function ReadTownsData(numberOfTowns)
 {
-    var height = 800;
-    var width = 600;
-    var townsPath = "http://ac32007.cloudapp.net:8080/Circles/Towns/2";
-    var townsData = {};
-    
-    var svg = d3.select("body").append("svg")
-            .attr("width",width)
-            .attr("height",height);
-
+    var townsPath = "http://ac32007.cloudapp.net:8080/Circles/Towns/" + numberOfTowns;
     d3.json(townsPath, 
         function(error, tData)
         {
@@ -54,12 +45,25 @@ function MapDraw()
             }
             else
             {
-                townsData=tData;
                 console.log(tData);
-                console.log(townsData);
+                return tData;
             }
         }
-    );   
+    );  
+}
+function MapDraw()
+{
+    var height = 800;
+    var width = 600;
+    var numberOfTowns = 2;
+    var townsData = {};
+    
+    var svg = d3.select("body").append("svg")
+            .attr("width",width)
+            .attr("height",height);
+
+    townsData = ReadTownsData(numberOfTowns);
+     
     
     console.log(townsData);
     d3.select("body").selectAll("p").data(townsData).enter().append("p").text(function(dd,index)
