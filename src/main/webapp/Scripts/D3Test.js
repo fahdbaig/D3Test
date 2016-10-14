@@ -86,7 +86,7 @@ function MapDraw(townsData)
                                .center(d3.geoCentroid(uk))
                                .translate([width/2,height/2]);
             */
-           var projection = d3.geo.Albers()
+           var projection = d3.geoAlbers()
                               .center([0,55,4])
                               .rotate([4.4,0])
                               .parallels([50,60])
