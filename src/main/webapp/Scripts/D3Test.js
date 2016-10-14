@@ -33,8 +33,13 @@ function JsonDraw()
     })
 }
 */
-function ReadTownsData(numberOfTowns)
+function UKMapRenderer(numberOfTowns)
 {
+    var numberOfTowns = 2;
+    LoadTownsData(numberOfTowns);    
+}
+function LoadTownsData(numberOfTowns)
+{    
     var townsPath = "http://ac32007.cloudapp.net:8080/Circles/Towns/" + numberOfTowns;
     d3.json(townsPath, 
         function(error, tData)
@@ -46,29 +51,26 @@ function ReadTownsData(numberOfTowns)
             else
             {
                 console.log(tData);
-                return tData;
+                MapDraw(tData)
             }
         }
     );  
 }
-function MapDraw()
+function MapDraw(townsData)
 {
     var height = 800;
     var width = 600;
-    var numberOfTowns = 2;
+
     
     var svg = d3.select("body").append("svg")
             .attr("width",width)
             .attr("height",height);
-
-    var townsData = [ReadTownsData(numberOfTowns)];
-     
-    
+      
     console.log(townsData);
-    //d3.select("body").selectAll("p").data(townsData).enter().append("p").text(function(dd,index)
-    //{
-    //  return "Town " + (index+1) + ": " + dd.Town;  
-    //});
+    d3.select("body").selectAll("p").data(townsData).enter().append("p").text(function(dd,index)
+    {
+      return "Town " + (index+1) + ": " + dd.Town;  
+    });
     
     d3.json("Data/uk.json",function(error,uk)
     {
@@ -100,7 +102,7 @@ function MapDraw()
         }
     });
 }
-window.onload=MapDraw;
+window.onload=UKMapRenderer;
 
 
 
