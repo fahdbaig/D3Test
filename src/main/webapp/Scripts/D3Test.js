@@ -38,16 +38,15 @@ function MapDraw()
 {
     var height = 800;
     var width = 600;
+    var townsPath = "http://ac32007.cloudapp.net:8080/Circles/Towns/2";
+    var townsData = {};
     
     var svg = d3.select("body").append("svg")
             .attr("width",width)
             .attr("height",height);
-    
-    var townsPath = "http://ac32007.cloudapp.net:8080/Circles/Towns/2";
-    
-    var townsData = {};
+
     d3.json(townsPath, 
-        townsData = function(error, tData)
+        function(error, tData)
         {
             if(error)
             {
@@ -55,8 +54,9 @@ function MapDraw()
             }
             else
             {
+                townsData=tData;
                 console.log(tData);
-                return tData;
+                console.log(townsData);
             }
         }
     );   
