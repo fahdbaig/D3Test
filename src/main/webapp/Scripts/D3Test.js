@@ -55,6 +55,7 @@ function LoadTownsData(numberOfTowns)
             {
                 //console.log(tData);
                 globalData = tData;
+                console.log("Global var: " + globalData);
                 //svg = MapDraw(tData)
             }
         }
