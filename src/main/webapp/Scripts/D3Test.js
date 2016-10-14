@@ -39,7 +39,6 @@ function UKMapRenderer(numberOfTowns)
     LoadTownsData(numberOfTowns);    
 }
 
-var globalData;
 function LoadTownsData(numberOfTowns)
 {    
     var townsPath = "http://ac32007.cloudapp.net:8080/Circles/Towns/" + numberOfTowns;
@@ -53,15 +52,11 @@ function LoadTownsData(numberOfTowns)
             }
             else
             {
-                //console.log(tData);
-                globalData = tData;
-                console.log("Global var: " + globalData);
-                //svg = MapDraw(tData)
+                console.log(tData);
+                svg = MapDraw(tData)
             }
         }
     );  
-    
-    console.log("Global var: " + globalData);
 }
 function MapDraw(townsData)
 {
