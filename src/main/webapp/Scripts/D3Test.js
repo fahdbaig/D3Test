@@ -96,17 +96,19 @@ function MapDraw(townsData)
             var path = d3.geoPath()
                          .projection(projection);
             
-            svg.selectAll("path")
-               .data(uk.features)
-               .enter()
-               .append("path")
-               .attr("d", path);
-       
             svg.selectAll(".subunit")
                .data(uk.feature(uk, uk.objects.subunits).features)
                .enter().append("path")
                .attr("class", function(d) { return "subunit " + d.id; })
                .attr("d", path);
+            
+            /*
+            svg.selectAll("path")
+               .data(uk.features)
+               .enter()
+               .append("path")
+               .attr("d", path);
+            */
         }
     });
     
