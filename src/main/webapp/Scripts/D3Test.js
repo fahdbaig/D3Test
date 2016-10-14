@@ -61,7 +61,7 @@ function MapDraw()
             .attr("width",width)
             .attr("height",height);
 
-    var townsData = ReadTownsData(numberOfTowns);
+    var townsData = [ReadTownsData(numberOfTowns)];
      
     
     console.log(townsData);
