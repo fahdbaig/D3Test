@@ -56,13 +56,12 @@ function MapDraw()
     var height = 800;
     var width = 600;
     var numberOfTowns = 2;
-    var townsData = {};
     
     var svg = d3.select("body").append("svg")
             .attr("width",width)
             .attr("height",height);
 
-    townsData = ReadTownsData(numberOfTowns);
+    var townsData = ReadTownsData(numberOfTowns);
      
     
     console.log(townsData);
