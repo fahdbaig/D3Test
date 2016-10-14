@@ -65,10 +65,10 @@ function MapDraw()
      
     
     console.log(townsData);
-    d3.select("body").selectAll("p").data(townsData).enter().append("p").text(function(dd,index)
-    {
-      return "Town " + (index+1) + ": " + dd.Town;  
-    });
+    //d3.select("body").selectAll("p").data(townsData).enter().append("p").text(function(dd,index)
+    //{
+    //  return "Town " + (index+1) + ": " + dd.Town;  
+    //});
     
     d3.json("Data/uk.json",function(error,uk)
     {
