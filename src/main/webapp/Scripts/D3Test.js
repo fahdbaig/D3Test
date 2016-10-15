@@ -109,8 +109,7 @@ function MapDraw(townsData)
                .data(uk.features)
                .enter()
                .append("path")
-               .attr("d", path);
-            
+               .attr("d", path);            
         }
     });
     
