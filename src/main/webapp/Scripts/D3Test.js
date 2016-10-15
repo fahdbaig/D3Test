@@ -83,9 +83,9 @@ function MapDraw(townsData)
         else
         {
             
-             var projection = d3.geo.Mercator()
+             var projection = d3.geo.mercator()
                                .scale(1500)
-                               .center(d3.geoCentroid(uk))
+                               .center(d3.geo.centroid(uk))
                                .translate([width/2,height/2]);
           /*  
            var projection = d3.geoAlbers()
@@ -94,9 +94,10 @@ function MapDraw(townsData)
                               .parallels([50,60])
                               .scale(4000)
                               .translate([width/2,height/2]);
-            var path = d3.geoPath()
-                         .projection(projection);
          */
+               var path = d3.geo.path()
+                         .projection(projection);
+         
         /*   
             svg.selectAll(".subunit")
                .data(uk.feature(uk, uk.objects.subunits).features)
